@@ -12,8 +12,11 @@
   <div uk-height-viewport="offset-top: true" class="uk-background-secondary" style="min-height: 100vh">
 
     <!-- Sticky Navbar -->
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-      <nav class="uk-navbar-container uk-navbar" uk-navbar>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-position-relative">
+      <nav class="uk-navbar-container uk-navbar uk-height-small" uk-navbar>
+        <div class="uk-navbar-center">
+          <img class="uk-height-small" src="images/Header.png">
+        </div>
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
             <li class="uk-item"><a href="https://github.com/rstuhlmuller">Github</a></li>
