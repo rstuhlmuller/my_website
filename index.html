@@ -9,40 +9,26 @@
 </head>
 
 <body>
-  <div uk-height-viewport="offset-top: true" class="uk-background-secondary" style="min-height: 100vh">
+  <div class="uk-background-secondary" style="min-height: 100vh">
 
-    <!-- Sticky Navbar -->
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-position-relative">
-      <nav class="uk-navbar-container uk-navbar uk-height-small" uk-navbar>
-        <div class="uk-navbar-center">
-          <img class="uk-height-small" src="images/Header.png">
+    <div uk-sticky class="uk-sticky">
+      <div class="uk-navbar-container uk-navbar-muted">
+        <div class="uk-container uk-container-xlarge">
+          <nav class="uk-navbar uk-height-small">
+            
+            <a href="http://www.rodman.me" aria-label="Rodman.Me" class="uk-logo uk-navbar-item">
+              <img alt="The Rodman Stuhlmuller Portfolio" loading="eager" src="/images/Header.png" width="600px">
+            </a>
+
+            <div class="uk-navbar-right">
+              <ul class="uk-navbar-nav">
+                <li class="uk-item"><a href="https://github.com/rstuhlmuller">Github</a></li>
+                <li class="uk-item"><a href="https://www.linkedin.com/in/rodman-s-307831124">LinkedIn</a></li>
+              </ul>
+            </div>
+
+          </nav>
         </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-navbar-nav">
-            <li class="uk-item"><a href="https://github.com/rstuhlmuller">Github</a></li>
-            <li class="uk-item"><a href="https://www.linkedin.com/in/rodman-s-307831124">LinkedIn</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-section uk-section-secondary">
-      <div class="uk-container">
-      </div>
-    </div>
-
-    <div class="uk-section uk-section-muted">
-      <div class="uk-container">
-  
-          <h3>Section</h3>
-  
-          <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
-              <!-- Profile Photo -->
-              <div class="uk-height-small uk-text-center uk-animation-scale-down">
-                <img class="uk-border-circle" src="images/Profile Picture.jpg" alt="Rodman Stuhlmuller">
-              </div>
-          </div>
-  
       </div>
     </div>
 

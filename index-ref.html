@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Rodman</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/css/uikit.min.css" />
+</head>
+
+<body>
+  <div uk-height-viewport="offset-top: true" class="uk-background-secondary" style="min-height: 100vh">
+
+    <!-- Sticky Navbar -->
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-position-relative">
+      <nav class="uk-navbar-container uk-navbar uk-height-small" uk-navbar>
+        <div class="uk-navbar-center">
+          <img class="uk-height-small" src="images/Header.png">
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li class="uk-item"><a href="https://github.com/rstuhlmuller">Github</a></li>
+            <li class="uk-item"><a href="https://www.linkedin.com/in/rodman-s-307831124">LinkedIn</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-section uk-section-secondary">
+      <div class="uk-container">
+      </div>
+    </div>
+
+    <div class="uk-section uk-section-primary uk-preserve-color">
+      <div class="uk-container">
+  
+          <div class="uk-panel uk-light uk-margin-medium">
+              <h3>Section Primary with cards</h3>
+          </div>
+  
+          <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+              <div>
+                  <div class="uk-card uk-card-default uk-card-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+              </div>
+              <div>
+                  <div class="uk-card uk-card-default uk-card-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
