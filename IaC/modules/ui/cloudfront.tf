@@ -1,4 +1,6 @@
-resource "aws_cloudfront_origin_access_identity" "my_website" {}
+resource "aws_cloudfront_origin_access_identity" "my_website" {
+  comment = "My_Website Access Identity"
+}
 
 data "aws_acm_certificate" "rodman_stuhlmuller_net" {
   provider    = aws.use1
@@ -14,7 +16,7 @@ resource "aws_cloudfront_distribution" "my_website" {
   price_class         = "PriceClass_100"
 
   origin {
-    domain_name = data.aws_s3_bucket.personal_bucket.bucket_domain_name
+    domain_name = aws_s3_bucket.my_website.bucket_domain_name
     origin_id   = "my_website"
     origin_path = "/my_website"
 
