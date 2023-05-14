@@ -11,6 +11,7 @@ resource "aws_cloudfront_distribution" "my_website" {
   aliases             = ["rodman.stuhlmuller.net"]
   enabled             = true
   default_root_object = "index.html"
+  price_class         = "PriceClass_100"
 
   origin {
     domain_name = data.aws_s3_bucket.personal_bucket.bucket_domain_name
