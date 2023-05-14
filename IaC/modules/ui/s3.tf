@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "my_website" {
-  bucket = "aws-rstuhlmuller-s3-usw2-my_website"
+  bucket = "aws-rstuhlmuller-s3-usw2-my-website"
 }
 
 resource "aws_s3_object" "my_website" {
@@ -23,7 +23,7 @@ data "aws_iam_policy_document" "s3_policy" {
   }
 }
 
-resource "aws_s3_bucket_policy" "example" {
+resource "aws_s3_bucket_policy" "cloudfront_policy" {
   bucket = aws_s3_bucket.my_website.id
   policy = data.aws_iam_policy_document.s3_policy.json
 }
