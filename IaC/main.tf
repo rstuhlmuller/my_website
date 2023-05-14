@@ -27,9 +27,26 @@ provider "aws" {
   }
 }
 
+provider "aws" {
+  alias  = "use1"
+  region = "us-east-1"
+
+  default_tags {
+    tags = {
+      ManualBuild = "False"
+      ManualTag   = "False"
+      Repo        = "rstuhlmuller/my_website"
+      Region      = "us-east-1"
+      Owner       = "RodmanStuhlmullerIV"
+    }
+  }
+}
+
+
 module "my_website" {
   source = "./modules/ui"
   providers = {
-    aws.usw2 = aws.usw2
+    aws      = aws.usw2,
+    aws.use1 = aws.use1
   }
 }

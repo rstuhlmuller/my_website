@@ -1,5 +1,12 @@
 resource "aws_cloudfront_origin_access_identity" "my_website" {}
 
+data "aws_acm_certificate" "rodman_stuhlmuller_net" {
+  provider    = aws.use1
+  domain      = "rodman.stuhlmuller.net"
+  types       = ["AMAZON_ISSUED"]
+  most_recent = true
+}
+
 resource "aws_cloudfront_distribution" "my_website" {
   enabled = true
 
@@ -38,7 +45,7 @@ resource "aws_cloudfront_distribution" "my_website" {
     }
   }
   viewer_certificate {
-    acm_certificate_arn      = "arn:aws:acm:us-west-2:716182248480:certificate/996ff35d-8563-4927-8683-765b9143d384"
+    acm_certificate_arn      = data.aws_acm_certificate.rodman_stuhlmuller_net.arn
     minimum_protocol_version = "TLSv1.2_2021"
     ssl_support_method       = "sni-only"
   }

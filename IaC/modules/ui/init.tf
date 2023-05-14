@@ -3,7 +3,8 @@ terraform {
     aws = {
       version = ">=4.66.1"
       configuration_aliases = [
-        aws.usw2
+        aws,
+        aws.use1
       ]
     }
   }
