@@ -30,6 +30,6 @@ provider "aws" {
 module "my_website" {
   source = "./modules/ui"
   providers = {
-    aws = aws.usw2
+    aws.usw2 = aws.usw2
   }
 }
