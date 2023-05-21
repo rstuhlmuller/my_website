@@ -5,11 +5,14 @@ section {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 #Introduction {
+    padding: 5px;
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
+    max-width: 100%;
 }
 
 #Introduction h1 {
@@ -34,7 +37,7 @@ section {
 }
 
 #Introduction p {
-    width: 500px;
+    max-width: 500px;
     font-weight: bold;
     overflow: auto;
 }
@@ -42,8 +45,7 @@ section {
 #ProfilePhoto {
     position: relative;
     display: flex;
-    width: 500px;
-    height: 75%;
+    max-width: 500px;
     justify-content: center;
     margin: 10px;
 }
