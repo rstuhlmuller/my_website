@@ -6,8 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      <section>
-      </section>
+      <AboutMe />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+buildspec.sh
 
 IaC/.terraform.lock.hcl
 IaC/.terraform/terraform.tfstate
