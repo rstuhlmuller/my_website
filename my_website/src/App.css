@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  position: relative;
+  height: 500px;
+  align-items: center;
+  justify-content: left;
+}

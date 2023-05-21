@@ -1,0 +1,13 @@
+#ProfilePhoto {
+    display: flex;
+    width: 500px;
+    height: 75%;
+    justify-content: center;
+    background-color: red;
+    margin: 10px;
+}
+
+#ProfilePhoto img {
+    max-width: 90%;
+    padding: 10px;
+}
