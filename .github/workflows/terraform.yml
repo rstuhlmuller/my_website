@@ -8,5 +8,11 @@ jobs:
   terraform-plan:
     runs-on: ubuntu-latest
     steps:
-        - name: Terraform
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: cd tf
+          run: cd IaC
+
+        - name: Terraform Plan
           uses: rstuhlmuller/terraform-action-cicd/.github/actions/terraform-plan@main
