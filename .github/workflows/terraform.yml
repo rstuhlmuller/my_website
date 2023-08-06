@@ -1,0 +1,12 @@
+---
+name: 'Check PR title and commit log messages'
+
+on:
+  push:
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Terraform
+          uses: rstuhlmuller/terraform-action-cicd/.github/actions/terraform-plan@main
