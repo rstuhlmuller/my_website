@@ -12,7 +12,8 @@ jobs:
           uses: actions/checkout@v3
 
         - name: cd tf
-          run: cd IaC
+          run: |    
+            cd IaC
 
         - name: Terraform Plan
           uses: rstuhlmuller/terraform-action-cicd/.github/actions/terraform-plan@main
