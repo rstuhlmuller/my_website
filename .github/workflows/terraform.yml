@@ -11,6 +11,12 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3
 
+        - name: Configure AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v2
+          with:
+            role-to-assume: arn:aws:iam::716182248480:role/Rodman_Stuhlmuller_Net-Site
+            aws-region: us-west-2
+
         - name: cd tf
           run: |    
             cd IaC
