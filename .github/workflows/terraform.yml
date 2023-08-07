@@ -16,7 +16,7 @@ jobs:
           uses: actions/checkout@v3
 
         - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@v3
+          uses: aws-actions/configure-aws-credentials@v2
           with:
             role-to-assume: arn:aws:iam::716182248480:role/Rodman_Stuhlmuller_Net-Site
             role-session-name: terraform-plan-my_website
