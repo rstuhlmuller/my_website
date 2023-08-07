@@ -6,6 +6,9 @@ on:
 
 jobs:
   terraform-plan:
+    defaults:
+      run:
+        working-directory: ./IaC
     runs-on: ubuntu-latest
     permissions:
       id-token: write # This is required for requesting the JWT
@@ -24,4 +27,4 @@ jobs:
         - name: Terraform Plan
           uses: rstuhlmuller/terraform-action-cicd/.github/actions/terraform-plan@main
           with:
-            terraform-working-dir: IaC
+            working-directory: ./IaC
