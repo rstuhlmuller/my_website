@@ -1,5 +1,5 @@
 resource "aws_cloudfront_origin_access_identity" "my_website" {
-  comment = "My_Website Access Identity"
+  comment = "My_Website Access Identity."
 }
 
 data "aws_acm_certificate" "rodman_stuhlmuller_net" {
