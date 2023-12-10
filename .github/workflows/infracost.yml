@@ -19,7 +19,7 @@ jobs:
               # See https://github.com/infracost/actions/tree/master/setup for other inputs
               # If you can't use this action, see Docker images in https://infracost.io/cicd
               with:
-                api-key: ${{ secrets.INFRACOST_TOKEN }}
+                api-key: ${{ secrets.INFRACOST_API_KEY }}
 
             - name: Checkout base branch
               uses: actions/checkout@v3
@@ -41,7 +41,7 @@ jobs:
                                 --format=json \
                                 --compare-to=/tmp/infracost-base.json \
                                 --out-file=/tmp/infracost.json
-                                
+
             - name: Post Infracost comment
               run: |
                 infracost comment github --path=/tmp/infracost.json \
