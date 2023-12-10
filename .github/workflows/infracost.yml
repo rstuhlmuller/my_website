@@ -1,0 +1,15 @@
+---
+name: 'Infracost'
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    infracost:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Infracost Actions
+              uses: infracost/actions@v2.1.0
+        
