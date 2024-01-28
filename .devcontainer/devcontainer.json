@@ -13,6 +13,13 @@
 			"tflint": "latest",
 			"terragrunt": "latest"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Vue.volar"
+			]
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
