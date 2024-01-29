@@ -1,4 +1,7 @@
 buildspec.sh
 ./build/*
 
-*.terraform*
+.terraform/
+.terragrunt-cache/
+
+node_modules/
