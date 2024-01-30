@@ -19,3 +19,11 @@ onMounted(() => {
         </div>
     </div>
 </template>
+
+<style scoped>
+#myhashicorp {
+    padding: 10px;
+    background-color: rgb(40, 27, 53);
+    border-radius: 10px;
+}
+</style>
