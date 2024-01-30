@@ -1,48 +1,59 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import HashicorpCert from './components/HashicorpCert.vue'
+import ProfilePicture from './components/ProfilePicture.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <HashicorpCert />
-    <TheWelcome />
-  </main>
+  <div class="card">
+    <ProfilePicture class="profile" />
+    <h1>Rodman Stuhlmuller</h1>
+    <p class="title">DevSecOps Engineer</p>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <p><button>Contact</button></p>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.title {
+  color: grey;
+  font-size: 18px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+button:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+.profile {
+  border-radius: 50%;
+  max-width: 50%;
 }
 </style>
