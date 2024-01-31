@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">=1.4.5"
+  required_version = "~> 1"
   backend "s3" {
     bucket = "aws-rstuhlmuller-s3-usw2"
     key    = "IaC/my_website/tf_state.json"
@@ -7,7 +7,8 @@ terraform {
   }
   required_providers {
     aws = {
-      version = ">=4.66.1"
+      source  = "hashicorp/aws"
+      version = "~> 5"
     }
   }
 }
