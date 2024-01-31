@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ProfilePicture from './components/ProfilePicture.vue';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 </script>
 
 <template>
@@ -7,16 +8,21 @@ import ProfilePicture from './components/ProfilePicture.vue';
     <ProfilePicture class="profile border" />
     <h1>Rodman Stuhlmuller</h1>
     <p class="title">DevSecOps Engineer</p>
-    <div class="skills">
-      <h6>Skills</h6>
-      <ul>
-        <li>Terraform</li>
-        <li>AWS</li>
-        <li>DevOps</li>
-        <li>Github</li>
-      </ul>
+    <p class="title">Seattle, WA</p>
+    <div class="icons">
+      <a href='//github.com/rstuhlmuller' target="_blank"><i class="bi bi-github"></i></a>
+      <a href='//www.linkedin.com/in/rstuhlmuller' target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href='//www.instagram.com/themanofrod' target="_blank"><i class="bi bi-instagram"></i></a>
     </div>
-    <p><button>Contact</button></p>
+  </div>
+  <div class="skills">
+    <h6>Skills</h6>
+    <ul>
+      <li>Terraform</li>
+      <li>AWS</li>
+      <li>DevOps</li>
+      <li>Github</li>
+    </ul>
   </div>
 </template>
 
@@ -34,33 +40,21 @@ import ProfilePicture from './components/ProfilePicture.vue';
 .title {
   color: grey;
   font-size: 18px;
-  padding-bottom: 100px;
 }
 
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.icons {
+  margin: 20px 0;
+  height: 50px;
 }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
+.icons a {
+  margin: 0 10px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
 }
 
-button:hover,
-a:hover {
-  opacity: 0.7;
+.icons .bi {
+  margin: 0 10px;
 }
 
 .profile {
@@ -77,6 +71,8 @@ a:hover {
   background-color: rgb(96, 30, 130);
   text-align: left;
   padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .skills ul {

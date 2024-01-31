@@ -31,4 +31,10 @@ a,
     display: grid;
     padding: 0 2rem;
   }
+
+  #hashicorp-cert {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
 }
