@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ProfilePicture from './components/ProfilePicture.vue';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import ProfilePicture from './components/ProfilePicture.vue'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 </script>
 
 <template>
@@ -10,9 +10,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
     <p class="title">DevSecOps Engineer</p>
     <p class="title">Seattle, WA</p>
     <div class="icons">
-      <a href='//github.com/rstuhlmuller' target="_blank"><i class="bi bi-github"></i></a>
-      <a href='//www.linkedin.com/in/rstuhlmuller' target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href='//www.instagram.com/themanofrod' target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="//github.com/rstuhlmuller" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="//www.linkedin.com/in/rstuhlmuller" target="_blank"
+        ><i class="bi bi-linkedin"></i
+      ></a>
+      <a href="//www.instagram.com/themanofrod" target="_blank"><i class="bi bi-instagram"></i></a>
     </div>
   </div>
   <div class="skills">
