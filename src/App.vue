@@ -18,7 +18,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
     </div>
   </div>
   <div class="skills">
-    <h6>Skills</h6>
+    <h5>Skills</h5>
     <ul>
       <li>Terraform</li>
       <li>AWS</li>
@@ -31,11 +31,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 <style scoped>
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--color-background-mute);
   width: 350px;
+  height: 500px;
   margin: auto;
   text-align: center;
   border-radius: 10px;
-  backdrop-filter: brightness(80%);
   padding-top: 20px;
 }
 
@@ -45,13 +46,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 }
 
 .icons {
-  margin: 20px 0;
-  height: 50px;
+  margin: 10px;
 }
 
 .icons a {
   margin: 0 10px;
-  color: rgb(255, 255, 255);
+  color: var(--color-text);
   font-size: 30px;
 }
 
@@ -65,16 +65,22 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 .profile.border {
   border-radius: 50%;
-  border: 2px solid #2d82f8;
-  padding: 5px;
+  border: 2px inset var(--color-border);
 }
 
 .skills {
-  background-color: rgb(96, 30, 130);
+  background-color: var(--color-background-soft);
+  position: relative;
+  bottom: 100%;
   text-align: left;
   padding: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.skills h5 {
+  margin: 0;
+  padding-bottom: 10px;
 }
 
 .skills ul {
@@ -84,7 +90,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 }
 
 .skills ul li {
-  border: 1px solid #301960;
+  border: 1px solid var(--color-border);
   border-radius: 2px;
   display: inline-block;
   font-size: 12px;
