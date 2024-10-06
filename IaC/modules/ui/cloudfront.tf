@@ -3,11 +3,10 @@ resource "aws_cloudfront_origin_access_identity" "my_website" {
 }
 
 data "aws_acm_certificate" "rodman_stuhlmuller_net" {
-  provider                  = aws.use1
-  domain                    = "rodman.stuhlmuller.net"
-  subject_alternative_names = ["*.rodman.stuhlmuller.net"]
-  types                     = ["AMAZON_ISSUED"]
-  most_recent               = true
+  provider    = aws.use1
+  domain      = "rodman.stuhlmuller.net"
+  types       = ["AMAZON_ISSUED"]
+  most_recent = true
 }
 
 resource "aws_cloudfront_distribution" "my_website" {
