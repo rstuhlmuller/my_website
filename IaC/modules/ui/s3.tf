@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "my_website" {
-  bucket = "aws-rstuhlmuller-s3-usw2-my-website"
+  bucket = "rstuhlmuller-s3-use1-personal-site"
 }
 
 locals {

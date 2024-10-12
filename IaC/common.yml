@@ -1,0 +1,5 @@
+project_name: Personal-Site
+default_tags:
+  ManualBuild: false
+  ManualTag: false
+  Owner: rodmans

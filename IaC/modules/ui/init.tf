@@ -1,12 +1,14 @@
 terraform {
+  required_version = "~> 1.0"
   required_providers {
     aws = {
-      version = "~> 5"
-      configuration_aliases = [
-        aws,
-        aws.use1
-      ]
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
   }
 }
 
+provider "aws" {
+  alias  = "usw2"
+  region = "us-west-2"
+}
