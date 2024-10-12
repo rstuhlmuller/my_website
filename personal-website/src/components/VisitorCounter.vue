@@ -11,7 +11,7 @@ export default {
             try {
                 // Get the initial visitor count
                 const response = await axios.get('https://api.rodman.stuhlmuller.net/visitor_count')
-                visitorCount.value = response.data
+                visitorCount.value = response.data["count"]
 
                 // Increment the visitor count
                 await axios.post('https://api.rodman.stuhlmuller.net/visitor_count')
