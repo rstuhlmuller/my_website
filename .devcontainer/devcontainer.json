@@ -7,29 +7,20 @@
 			"version": "latest",
 			"tflint": "latest",
 			"terragrunt": "latest"
-		},
-		"ghcr.io/devcontainers/features/aws-cli:1": {
-			"version": "latest"
 		}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	// "postCreateCommand": "npm install -g @vue/cli",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"HashiCorp.HCL",
 				"Vue.volar",
-				"Vue.vscode-typescript-vue-plugin",
-				"dbaeumer.vscode-eslint",
-				"esbenp.prettier-vscode"
+				"Codeium.codeium"
 			]
 		}
-	},
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root",
-	"mounts": [
-		"source=${env:HOME}${env:USERPROFILE}/.aws,target=/root/.aws,type=bind"
-	]
+	}
 }
