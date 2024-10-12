@@ -21,6 +21,13 @@ export default {
       document.documentElement.classList.add(themeToApply)
     }
 
+    const updateSystemTheme = (e) => {
+      systemTheme.value = e.matches ? 'dark' : 'light'
+      if (theme.value === 'auto') {
+        applyTheme('auto')
+      }
+    }
+
     watch(theme, (newTheme) => {
       localStorage.setItem('theme', newTheme)
       applyTheme(newTheme)
@@ -29,13 +36,13 @@ export default {
     onMounted(() => {
       applyTheme(theme.value)
 
-      // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        systemTheme.value = e.matches ? 'dark' : 'light'
-        if (theme.value === 'auto') {
-          applyTheme('auto')
-        }
-      })
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      mediaQuery.addListener(updateSystemTheme)
+
+      // Clean up the listener when the component is unmounted
+      return () => {
+        mediaQuery.removeListener(updateSystemTheme)
+      }
     })
 
     return { theme }
@@ -81,6 +88,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .theme-toggle {
@@ -96,5 +104,12 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   box-shadow: var(--card-shadow);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 10px;
+  }
 }
 </style>

@@ -58,6 +58,7 @@ export default {
   max-width: 400px;
   width: 100%;
   transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .profile-pic-container {
@@ -114,5 +115,35 @@ p {
   color: var(--text-color);
   line-height: 1.6;
   text-align: center;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .profile-pic-border {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-pic-background {
+    width: 170px;
+    height: 170px;
+  }
+
+  .profile-pic {
+    width: 165px;
+    height: 165px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }
 </style>
