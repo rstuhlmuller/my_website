@@ -7,7 +7,8 @@
 			"version": "latest",
 			"tflint": "latest",
 			"terragrunt": "latest"
-		}
+		},
+		"ghcr.io/devcontainers/features/aws-cli:1": {}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
