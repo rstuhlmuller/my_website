@@ -1,67 +1,63 @@
+<template>
+  <div class="theme-toggle">
+    <button 
+      v-for="option in ['light', 'auto', 'dark']" 
+      :key="option"
+      @click="$emit('update:modelValue', option)"
+      :class="['theme-button', { active: modelValue === option }]"
+    >
+      {{ option.charAt(0).toUpperCase() + option.slice(1) }}
+    </button>
+  </div>
+</template>
+
 <script>
 export default {
-    name: 'ThemeToggle',
-    props: {
-        modelValue: {
-            type: String,
-            required: true
-        }
-    },
-    emits: ['update:modelValue'],
-    computed: {
-        theme: {
-            get() {
-                return this.modelValue
-            },
-            set(value) {
-                this.$emit('update:modelValue', value)
-            }
-        }
+  name: 'ThemeToggle',
+  props: {
+    modelValue: {
+      type: String,
+      required: true
     }
+  },
+  emits: ['update:modelValue']
 }
 </script>
 
-<template>
-    <div class="theme-toggle">
-        <div class="segmented-control">
-            <input type="radio" id="light" value="light" v-model="theme">
-            <label for="light">Light</label>
-
-            <input type="radio" id="auto" value="auto" v-model="theme">
-            <label for="auto">Auto</label>
-
-            <input type="radio" id="dark" value="dark" v-model="theme">
-            <label for="dark">Dark</label>
-        </div>
-    </div>
-</template>
-
 <style scoped>
 .theme-toggle {
-    display: inline-block;
+  display: flex;
+  justify-content: center;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
 }
 
-.segmented-control {
-    display: flex;
-    border: 1px solid var(--text-color);
-    border-radius: 20px;
-    overflow: hidden;
+.theme-button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
-.segmented-control input[type="radio"] {
-    display: none;
+.theme-button:hover {
+  opacity: 0.9;
 }
 
-.segmented-control label {
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: center;
-    color: var(--text-color);
-}
-
-.segmented-control input[type="radio"]:checked+label {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+.theme-button.active {
+  background-color: var(--text-color);
+  color: var(--card-bg);
+  opacity: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 </style>
