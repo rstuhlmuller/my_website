@@ -21,6 +21,7 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::716182248480:role/aws-ecs-github-runner-task-execution-role
           role-session-name: personal-website-gh-deployment
+          audience: sts.amazonaws.com
 
       - name: Deploy
         run: |
