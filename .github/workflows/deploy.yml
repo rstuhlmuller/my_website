@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::716182248480:role/aws-ecs-github-runner-task-execution-role
+
+      - name: Deploy
+        run: |
+          cd personal-website
+          yarn build
+          aws s3 sync ./dist s3://rstuhlmuller-s3-use1-personal-site/my-website/ --delete --only-show-errors
