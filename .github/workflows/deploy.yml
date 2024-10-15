@@ -26,7 +26,7 @@ jobs:
       - name: Deploy
         run: |
           cd personal-website
-          yarn install --pure-lockfile
+          yarn install --frozen-lockfile
           yarn add @vue/cli-service
           yarn build
-          aws s3 sync ./dist s3://rstuhlmuller-s3-use1-personal-site/my-website/ --delete --only-show-errors
+          aws s3 sync --delete ./dist s3://rstuhlmuller-s3-use1-personal-site/my-website/ --only-show-errors
