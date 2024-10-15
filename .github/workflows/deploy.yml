@@ -19,7 +19,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::716182248480:role/aws-ecs-github-runner-task-execution-role
+          role-to-assume: arn:aws:iam::716182248480:role/Github-Actions-IDP
           role-session-name: personal-website-gh-deployment
           audience: sts.amazonaws.com
 
