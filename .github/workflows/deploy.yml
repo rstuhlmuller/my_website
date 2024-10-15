@@ -23,10 +23,17 @@ jobs:
           role-session-name: personal-website-gh-deployment
           audience: sts.amazonaws.com
 
-      - name: Deploy
+      - name: Install
         run: |
           cd personal-website
           yarn install --frozen-lockfile
           yarn add @vue/cli-service
-          yarn build
-          aws s3 sync --delete ./dist s3://rstuhlmuller-s3-use1-personal-site/my-website/ --only-show-errors
+
+      - name: Build
+        run: yarn build
+
+      - name: Push to S3
+        run: aws s3 sync --delete ./dist s3://rstuhlmuller-s3-use1-personal-site/my-website/ --only-show-errors
+
+      - name: Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id EFQ36XOOE7NEJ --paths "/*"
