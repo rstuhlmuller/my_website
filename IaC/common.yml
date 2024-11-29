@@ -3,3 +3,4 @@ default_tags:
   ManualBuild: false
   ManualTag: false
   Owner: rodmans
+  Project: Personal-Site
