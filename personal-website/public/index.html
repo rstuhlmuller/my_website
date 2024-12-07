@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <title>Rodman Stuhlmuller</title>
 </head>
 
@@ -15,7 +15,28 @@
       continue.</strong>
   </noscript>
   <div id="app"></div>
-  <!-- built files will be auto injected -->
+  <script>
+    // Function to compute Gravatar hash
+    function getGravatarHash(email) {
+      // Convert email to lowercase
+      email = email.toLowerCase().trim();
+      // Compute MD5 hash using CryptoJS
+      return CryptoJS.MD5(email).toString();
+    }
+
+    // Compute hash and set favicon
+    const email = "rodman@stuhlmuller.net";
+    const hash = getGravatarHash(email);
+
+    // Create and set favicon link
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = `https://www.gravatar.com/avatar/${hash}`;
+    document.head.appendChild(link);
+
+    // Display hash in console for verification
+    console.log('Gravatar hash:', hash);
+  </script>
 </body>
 
 </html>
