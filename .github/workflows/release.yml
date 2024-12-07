@@ -1,34 +1,30 @@
 name: Release
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-
-permissions: read-all
-
+permissions:
+  contents: read # for checkout
 jobs:
   release:
-    name: Release
-    runs-on: ubuntu-latest
     permissions:
-      contents: write
-      packages: write
-      pull-requests: write
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    name: release
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          persist-credentials: false
-          
-      - name: Release
-        uses: cycjimmy/semantic-release-action@v4
-        with:
-          semantic_version: 18.0.0
-          extra_plugins: |
-            @semantic-release/changelog@6.0.0
-            @semantic-release/git@10.0.0
-          dry_run: false
+          cache: npm
+          node-version: lts/*
+      - run: npm clean-install
+      - run: corepack npm audit signatures
+      # pinned version updated automatically by Renovate.
+      # details at https://semantic-release.gitbook.io/semantic-release/usage/installation#global-installation
+      - run: npx semantic-release@21.0.2
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
